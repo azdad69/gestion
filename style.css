@@ -1,0 +1,67 @@
+
+header{
+        background-color: #080248;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        margin-bottom: 10px;
+}
+.bib{
+    background-color:rgb(140, 226, 247);
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    padding: 5px;
+    border-radius: 20px;
+}
+.left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.group input{
+    display: flex;
+    flex-direction: column;
+    height: 40px;
+    width: 40rem;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+h1{
+    margin-left: 200px;
+    margin-top: 10px;
+}
+
+button{
+    display: flex;
+    margin-left: 150px;
+    margin-top: 20px;
+    height: 40px;
+    width: 20rem;
+    padding: 10px 10px 10px 120px;
+    border-radius: 10px;
+
+}
+.livres{
+font-size: 30px;
+text-decoration: none;
+color: black;
+}
+.bib:hover{
+   background-color: aliceblue;
+}
+.logoo{
+    font-size: 30px;
+    color: white;
+}
+form{
+background-color: skyblue;
+padding: 30px;
+border-radius: 20px;
+width:fit-content;
+}

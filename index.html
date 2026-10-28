@@ -5,9 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="js.js" defer></script>
 </head>
+<header>
+<div class="left">
+    <img class="logo" src="photos/book.png" alt="book1" width="50">
+    <h3 class="logoo">Ma Bibliothéque</h3>
+</div>
+<div class="bib">   
+    <img class="books" src="photos/books.png" alt="books" width="40" height="40">
+    <a class="livres" href="livres.html">Mes livres</a>
+</div>
+</header>
 <body>
-    
+        <form>
+        <div class="group">
+          <label for="titre">Titre*</label>
+          <input type="text" id="titre" name="text" placeholder="Entrer le titre...">
+        </div>
+        <div class="group">
+          <label for="author">Auteur*</label>
+          <input type="text" id="author" name="text" placeholder="Entrer l'auteur... " required>
+        </div>
+        <div class="group">
+          <label for="genre">Genre*</label>
+          <input type="text" id="genre" name="text" placeholder="Entrer genre...">
+        </div>
+        <div class="group">
+          <label for="year">Année*</label>
+          <input type="text" id="year" name="text" placeholder="Entrer l'année...">
+        </div>
+        <div class="group">
+          <label for="description">Description*</label>
+          <input type="text" name="description" placeholder="Entre un ptete description ...">
+        </div>
+
+        <button type="submit">enregistrer</button>
+        </form>
 </body>
-<script src="js.js" defer></script>
 </html>
