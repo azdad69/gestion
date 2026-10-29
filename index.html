@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="style.css">
     <script src="js.js" defer></script>
 </head>
-<header>
+
+
+
+<body>
+  <header>
 <div class="left">
     <img class="logo" src="photos/book.png" alt="book1" width="50">
     <h3 class="logoo">Ma Bibliothéque</h3>
@@ -18,12 +22,10 @@
 </div>
 
 </header>
- <div class="inputSearch">
+   <div class="inputSearch">
           <input class="Search" type="text" placeholder="Search...">
         <img src="photos/search.png" alt="scop" width="35" >
         </div>
-
-<body>
         <form>
         <div class="group">
           <label for="titre">Titre*</label>
@@ -31,7 +33,7 @@
         </div>
         <div class="group">
           <label for="author">Auteur*</label>
-          <input type="text" id="author" name="text" placeholder="Entrer l'auteur... " required>
+          <input type="text" id="author" name="text" placeholder="Entrer l'auteur... ">
         </div>
         <div class="group">
           <label for="genre">Genre*</label>
@@ -39,14 +41,15 @@
         </div>
         <div class="group">
           <label for="year">Année*</label>
-          <input type="text" id="year" name="text" placeholder="Entrer l'année...">
+          <input type="number" id="year" name="text" placeholder="Entrer l'année...">
         </div>
         <div class="group">
           <label for="description">Description*</label>
-          <input type="text" name="description" placeholder="Entre un ptete description ...">
+          <input type="text" id="description" name="description" placeholder="Entre un ptete description ...">
         </div>
 
         <button type="submit">enregistrer</button>
         </form>
+        <div id="booksList"></div>
 </body>
 </html>
