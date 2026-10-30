@@ -25,6 +25,30 @@
         <a class="livres" href="index.html">Accueil</a>
       </div>
     </header>
-    <div id="booksList"></div>
+    <div class="recherche-tri">
+        <input type="text" id="recherche" placeholder="Recherche par titre ou auteur...">
+        <select id="tri">
+            <option value="" hidden>Trie par...</option>
+            <option value="titre">Titre</option>
+            <option value="auteur">Auteur</option>
+            <option value="annee">Année</option>
+        </select>
+    </div>
+    
+    <table>
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Auteur</th>
+            <th>Genre</th>
+            <th>Année</th>
+            <th>Status</th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody id="booksList"></tbody>
+</table>
   </body>
 </html>
