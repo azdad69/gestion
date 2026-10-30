@@ -44,7 +44,8 @@ formulaire.reset();
 function afficherLivres(listeLivres = livres){
     if(bookList){
     bookList.innerHTML ="";
-    listeLivres.forEach(function (livre, index){
+    listeLivres.forEach(function (livre){
+        const vraiIndex = livres.indexOf(livre)
         bookList.innerHTML += `
         <tr>
         <td>${livre.titre}</td>
