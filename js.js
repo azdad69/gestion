@@ -62,6 +62,19 @@ function afficherLivres(listeLivres = livres){
 }
 afficherLivres();
 if (bookList) {
+    bookList.addEventListener("click", function(event) {
+        if (event.target.id === "btn2") {
+            const index = Number(event.target.dataset.index);
+            const confirmation = confirm("Voulez-vous supprimer ce livre ?");
+            if (confirmation) {
+                livres.splice(index, 1);
+                localStorage.setItem("livres", JSON.stringify(livres));
+                afficherLivres();
+            }
+        }
+    });
+}
+if (bookList) {
   bookList.addEventListener("click", function(event) {
     if (event.target.id === "btn1") {
       indexModification = Number(event.target.dataset.index);
