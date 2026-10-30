@@ -7,6 +7,7 @@ const description = document.querySelector("#description");
 const bookList = document.querySelector("#booksList")
 let livres = JSON.parse(localStorage.getItem("livres")) || [];
 
+if (formulaire){
 formulaire.addEventListener("submit", function(event){
 event.preventDefault();
 const titreSaisi = titre.value;
@@ -29,13 +30,16 @@ livres.push(livre)
 localStorage.setItem("livres", JSON.stringify(livres));
 afficherLivres();
 })
+}
 function afficherLivres(){
-    bookList.innerHTML =""
+    if(bookList){
+    bookList.innerHTML ="";
     livres.forEach(function (livre){
         bookList.innerHTML += `
         <h3>${livre.titre}</h3>
         <p>${livre.auteur}</p>
         `;
     })
+}
 }
 afficherLivres();
