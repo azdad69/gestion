@@ -8,7 +8,7 @@ let livres = JSON.parse(localStorage.getItem("livres")) || [];
 const bookList = document.getElementById("booksList")
 const recherche = document.querySelector("#recherche")
 const tri = document.querySelector("#tri")
-
+let indexModification = null;
 
 
 if (formulaire){
@@ -30,7 +30,12 @@ genre : genreSaisi.trim(),
 annee : anneeSaisi.trim(),
 description : descriptionSaisi.trim()
 }
-livres.push(livre)
+if (indexModification === null) {
+    livres.push(livre);
+} else {
+    livres[indexModification] = livre;
+    indexModification = null;
+}
 localStorage.setItem("livres", JSON.stringify(livres));
 afficherLivres();
 formulaire.reset();
@@ -39,7 +44,7 @@ formulaire.reset();
 function afficherLivres(listeLivres = livres){
     if(bookList){
     bookList.innerHTML ="";
-    listeLivres.forEach(function (livre){
+    listeLivres.forEach(function (livre, index){
         bookList.innerHTML += `
         <tr>
         <td>${livre.titre}</td>
@@ -48,14 +53,27 @@ function afficherLivres(listeLivres = livres){
         <td>${livre.annee}</td>
         <td>${livre.description}</td>
         <td>
-        <button id="btn1">modifier</button>
-        <button id="btn2">supprimer</button>
+        <button id="btn1" data-index="${vraiIndex}">modifier</button>
+        <button id="btn2" data-index="${vraiIndex}">supprimer</button>
         </tr>
         `;
     })
 }
 }
 afficherLivres();
+if (bookList) {
+  bookList.addEventListener("click", function(event) {
+    if (event.target.id === "btn1") {
+      indexModification = Number(event.target.dataset.index);
+      const livre = livres[indexModification];
+      titre.value = livre.titre;
+      auteur.value = livre.auteur;
+      genre.value = livre.genre;
+      annee.value = livre.annee;
+      description.value = livre.description;
+    }
+  });
+}
 if (recherche){
     recherche.addEventListener("input", function (){
         const rechercheSaisie = recherche.value.toLowerCase().trim()
