@@ -91,3 +91,27 @@ table {
 tr, td, th{
     border: 2px solid red;
 }
+#btn1,
+#btn2 {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 4px;
+    font-size: 14px;
+}
+
+#btn1 {
+    background-color: #3498db;
+    color: white;
+}
+
+#btn2 {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#btn1:hover,
+#btn2:hover {
+    opacity: 0.8;
+}
